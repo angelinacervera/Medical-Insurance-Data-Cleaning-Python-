@@ -13,19 +13,21 @@ Basic Analysis: Iterated through processed data to calculate key metrics like Av
 
 ---
 
+---
+
 ## ☕ Project 2: Coffee Shop Financial Analysis
 This section demonstrates advanced data cleaning using the **Pandas** library. It processes a synthetic financial dataset to calculate business metrics, moving beyond basic string manipulation into structured data analysis.
 
 ### 📋 Data Dictionary
 | Column Name | Description | Data Type |
 | :--- | :--- | :--- |
-| `transaction_id` | Unique identifier for each sale | String/Object |
-| `transaction_date` | The date the purchase was made | DateTime |
-| `transaction_amount` | The total value of the sale (Cleaned from string to float) | Float |
-| `item_category` | The type of product sold (Beverage, Food, etc.) | String |
+| **transaction_id** | Unique identifier for each sale | String |
+| **transaction_date** | The date the purchase was made | DateTime |
+| **transaction_amount** | The total value of the sale (Cleaned to float) | Float |
+| **item_category** | The type of product sold (Beverage, Food, etc.) | String |
 
 ### 🛠️ Skills Demonstrated
-* **Automated Cleaning:** Standardizing column headers (lowercase, underscores, stripping whitespace).
-* **Regex Processing:** Using Regular Expressions to strip currency symbols ($) and commas.
-* **Aggregations:** Calculating total revenue and average transaction values across thousands of rows.
-* **Error Handling:** Implementing `try-except` blocks to manage missing files.
+* **Automated Cleaning:** Standardizing column headers (lowercase, underscores).
+* **Regex Processing:** Using Regular Expressions to strip currency symbols ($).
+* **Aggregations:** Calculating total revenue and average transaction values.
+* **Error Handling:** Implementing `try-except` blocks for file management. blocks to manage missing files.
