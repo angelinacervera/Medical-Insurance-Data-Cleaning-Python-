@@ -2,7 +2,7 @@
 # Purpose: Clean and categorize bank transaction data to calculate Net Profit and Margin.
 # This script demonstrates manual string manipulation and business logic application.
 
-file_name = 'checking_account_main.csv'
+file_name = 'raw_data/checking_account_main.csv'
 
 try:
     with open(file_name, 'r') as file:
