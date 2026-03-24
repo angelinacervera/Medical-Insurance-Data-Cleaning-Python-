@@ -3,6 +3,23 @@ A collection of Python projects focused on transforming messy, real-world data i
 
 ---
 
+## ⚖️ Project 3: Multi-Source Payroll Reconciliation Audit
+This advanced project demonstrates the ability to perform financial auditing by cross-referencing two distinct data sources: an external HR payroll report (**Gusto**) and an internal bank ledger (**Checking Secondary**).
+
+### 📋 Data Dictionary
+| Attribute | Source | Description | Data Type |
+| :--- | :--- | :--- | :--- |
+| **gusto_total** | gusto_payroll.csv | The "Source of Truth" for authorized net pay | Float |
+| **bank_total** | checking_secondary.csv | Actual cash outflows categorized as 'Payroll' | Float |
+| **variance** | Calculated | The discrepancy between authorized pay and bank clearing | Float |
+
+### 🛠️ Skills Demonstrated
+* **Multi-File Integration:** Loading and processing multiple CSV sources within a single execution environment.
+* **Audit Controls:** Implementing a "Tolerance Check" (0.01) to account for floating-point rounding in financial data.
+* **Data Integrity:** Using absolute value logic (`abs()`) to reconcile debit-based bank records against positive reporting totals.
+
+---
+
 ## ☕ Project 2: Coffee Shop Financial Ledger Analysis
 This project processes a complex general ledger from a high-volume coffee shop. It demonstrates the ability to handle mixed transaction types (Credits vs. Debits) and calculate high-level business health metrics.
 
@@ -35,6 +52,14 @@ This project focuses on the initial stage of the data pipeline: taking a single,
 ### 🛠️ Skills Demonstrated
 * **String Parsing:** Splitting and stripping "messy" bulk data into individual record components.
 * **List Management:** Building nested "List of Lists" to organize multi-dimensional data.
+* **Aggregations:** Iterating through cleaned records to find averages for BMI and insurance costs.
+
+---
+
+## 🚀 How to Run These Projects
+1. Clone the repository: `git clone https://github.com/angelinacervera/Medical-Insurance-Data-Cleaning-Python-.git`
+2. Navigate to the `Coffee-Shop-Analysis` folder.
+3. Run the specific audit: `python payroll_audit.py`
 * **Aggregations:** Iterating through cleaned records to find averages for BMI and insurance costs.
 
 ---
