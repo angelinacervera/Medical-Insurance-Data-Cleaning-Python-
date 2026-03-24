@@ -57,14 +57,13 @@ This project focuses on the initial stage of the data pipeline: taking a single,
 ---
 
 ## 🚀 How to Run These Projects
-1. Clone the repository: `git clone https://github.com/angelinacervera/Medical-Insurance-Data-Cleaning-Python-.git`
-2. Navigate to the `Coffee-Shop-Analysis` folder.
-3. Run the specific audit: `python payroll_audit.py`
-* **Aggregations:** Iterating through cleaned records to find averages for BMI and insurance costs.
+1. **Clone the repository:**
+   `git clone https://github.com/angelinacervera/Medical-Insurance-Data-Cleaning-Python-.git`
 
----
+2. **Navigate to the project folder:**
+   `cd Coffee-Shop-Analysis`
 
-## 🚀 How to Run These Projects
-1. Clone the repository: `git clone https://github.com/angelinacervera/Medical-Insurance-Data-Cleaning-Python-.git`
-2. Navigate to the specific project folder.
-3. Run the Python script: `python financial_cleaning.py` or `python script.py`
+3. **Execute the desired script:**
+   * **For Project 2 (Financial Analysis):** `python financial_cleaning.py`
+   * **For Project 3 (Payroll Audit):** `python payroll_audit.py`
+   * **For Project 1 (Medical Data):** Navigate back to the root and run `python script.py`
