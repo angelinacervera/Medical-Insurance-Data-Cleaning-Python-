@@ -63,4 +63,10 @@ This project focuses on taking a single, unformatted string of patient records a
 1. **Clone the repository:**
    `git clone https://github.com/angelinacervera/Medical-Insurance-Data-Cleaning-Python-.git`
 
-2.
+2. **Navigate to the project folder:**
+   `cd Coffee-Shop-Analysis`
+
+3. **Execute the desired audit script:**
+   * **Project 2 (Financials):** `python financial_cleaning.py`
+   * **Project 3 (Payroll):** `python payroll_audit.py`
+   * **Project 4 (Expenses):** `python expense_audit.py`
