@@ -2,7 +2,7 @@ import pandas as pd
 
 # 1. Load the dataset (Assuming you upload the CSV to the same folder)
 # For now, we'll use a placeholder name
-file_name = 'coffee_shop_data.csv' 
+file_name = 'checking_account_main.csv' 
 
 try:
     df = pd.read_csv(file_name)
