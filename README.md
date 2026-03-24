@@ -1,33 +1,45 @@
-# Medical-Insurance-Data-Cleaning-Python-
-Project Objective
-The goal of this project was to take a raw, "messy" string of medical records and transform it into a structured, clean format suitable for data analysis. This involved extensive use of Python String Methods and Control Flow.
-
-Skills Demonstrated
-Data Cleaning: Used .strip(), .replace(), and .split() to remove whitespace and unwanted characters.
-
-String Manipulation: Utilized string slicing ([1:]) to prepare currency data for mathematical operations.
-
-Data Structuring: Converted a single string into nested lists (List of Lists) to organize individual patient records.
-
-Basic Analysis: Iterated through processed data to calculate key metrics like Average BMI and Average Insurance Cost.
+# 🩺 Professional Data Engineering Portfolio
+A collection of Python projects focused on transforming messy, real-world data into actionable business insights through manual string manipulation and structured analysis.
 
 ---
 
----
-
-## ☕ Project 2: Coffee Shop Financial Analysis
-This section demonstrates advanced data cleaning using the **Pandas** library. It processes a synthetic financial dataset to calculate business metrics, moving beyond basic string manipulation into structured data analysis.
+## ☕ Project 2: Coffee Shop Financial Ledger Analysis
+This project processes a complex general ledger from a high-volume coffee shop. It demonstrates the ability to handle mixed transaction types (Credits vs. Debits) and calculate high-level business health metrics.
 
 ### 📋 Data Dictionary
 | Column Name | Description | Data Type |
 | :--- | :--- | :--- |
-| **transaction_id** | Unique identifier for each sale | String |
-| **transaction_date** | The date the purchase was made | DateTime |
-| **transaction_amount** | The total value of the sale (Cleaned to float) | Float |
-| **item_category** | The type of product sold (Beverage, Food, etc.) | String |
+| **transaction_id** | Unique identifier for each bank entry | String |
+| **type** | Categorization of funds (Credit = Income, Debit = Expense) | String |
+| **amount** | The raw currency value of the transaction | Float |
+| **category** | Business label (Sales Revenue, COGS, Operating Expense) | String |
 
 ### 🛠️ Skills Demonstrated
-* **Automated Cleaning:** Standardizing column headers (lowercase, underscores).
-* **Regex Processing:** Using Regular Expressions to strip currency symbols ($).
-* **Aggregations:** Calculating total revenue and average transaction values.
-* **Error Handling:** Implementing `try-except` blocks for file management. blocks to manage missing files.
+* **Financial Logic:** Separating revenue from costs to calculate **Net Profit** and **Profit Margin**.
+* **Data Cleaning:** Using manual Python methods to strip currency symbols ($) and commas from strings.
+* **Error Handling:** Implementing `try-except` blocks to manage file dependencies.
+
+---
+
+## 🏥 Project 1: Medical Insurance Record Cleaning
+This project focuses on the initial stage of the data pipeline: taking a single, unformatted string of patient records and converting it into a structured database format.
+
+### 📋 Data Dictionary
+| Attribute | Description | Data Type |
+| :--- | :--- | :--- |
+| **patient_name** | The full name of the insured individual | String |
+| **age** | The current age of the patient | Integer |
+| **bmi** | Body Mass Index used for risk assessment | Float |
+| **insurance_cost** | The annual premium amount charged | Float |
+
+### 🛠️ Skills Demonstrated
+* **String Parsing:** Splitting and stripping "messy" bulk data into individual record components.
+* **List Management:** Building nested "List of Lists" to organize multi-dimensional data.
+* **Aggregations:** Iterating through cleaned records to find averages for BMI and insurance costs.
+
+---
+
+## 🚀 How to Run These Projects
+1. Clone the repository: `git clone https://github.com/angelinacervera/Medical-Insurance-Data-Cleaning-Python-.git`
+2. Navigate to the specific project folder.
+3. Run the Python script: `python financial_cleaning.py` or `python script.py`
