@@ -1,28 +1,56 @@
-import pandas as pd
+# --- PROJECT: COFFEE SHOP FINANCIAL LEDGER ANALYSIS ---
+# Purpose: Clean and categorize bank transaction data to calculate Net Profit and Margin.
+# This script demonstrates manual string manipulation and business logic application.
 
-# 1. Load the dataset (Assuming you upload the CSV to the same folder)
-# For now, we'll use a placeholder name
-file_name = 'checking_account_main.csv' 
+file_name = 'checking_account_main.csv'
 
 try:
-    df = pd.read_csv(file_name)
-    print("Dataset loaded successfully!\n")
+    with open(file_name, 'r') as file:
+        raw_data = file.readlines()
 
-    # 2. Cleaning Logic: Standardize Column Names
-    # This makes it easier to reference columns later
-    df.columns = [col.strip().lower().replace(' ', '_') for col in df.columns]
+    # Skip header and isolate transaction rows
+    header = raw_data[0].strip().split(',')
+    data_rows = raw_data[1:]
 
-    # 3. Cleaning Logic: Currency to Float
-    # If the CSV has "$" or "," in the price, we strip them and convert to float
-    if 'transaction_amount' in df.columns:
-        df['transaction_amount'] = df['transaction_amount'].replace('[\$,]', '', regex=True).astype(float)
+    # 1. DATA CLEANING & TYPE CONVERSION
+    clean_records = []
+    for line in data_rows:
+        row = [item.strip() for item in line.split(',')]
+        
+        # Clean currency string in Column F (Index 5) and cast to float
+        row[5] = float(row[5].replace('$', '').replace(',', ''))
+        clean_records.append(row)
 
-    # 4. Analysis: Applying your previous logic at scale
-    total_revenue = df['transaction_amount'].sum()
-    avg_transaction = df['transaction_amount'].mean()
+    # 2. FINANCIAL LOGIC (CREDITS VS. DEBITS)
+    total_revenue = 0
+    total_expenses = 0
+    
+    for record in clean_records:
+        amount = record[5]
+        transaction_type = record[4] # Column E identifies the nature of the transaction
+        
+        if transaction_type == 'Credit':
+            total_revenue += amount
+        elif transaction_type == 'Debit':
+            total_expenses += amount
 
-    print(f"Total Revenue: ${total_revenue:,.2f}")
-    print(f"Average Transaction: ${avg_transaction:,.2f}")
+    # 3. CALCULATING KEY BUSINESS METRICS
+    net_profit = total_revenue - total_expenses
+    
+    # Calculate Profit Margin Percentage: (Net Profit / Revenue) * 100
+    if total_revenue > 0:
+        profit_margin = (net_profit / total_revenue) * 100
+    else:
+        profit_margin = 0
+
+    # 4. REPORT GENERATION
+    print(f"--- FINANCIAL SUMMARY: {file_name} ---")
+    print(f"Transactions Processed: {len(clean_records)}")
+    print(f"Gross Revenue (Credits):  ${total_revenue:,.2f}")
+    print(f"Total Operating Costs:    ${total_expenses:,.2f}")
+    print(f"----------------------------------------")
+    print(f"NET PROFIT / (LOSS):      ${net_profit:,.2f}")
+    print(f"PROFIT MARGIN:            {profit_margin:.2f}%")
 
 except FileNotFoundError:
-    print("Please upload the 'coffee_shop_data.csv' file to this folder to run the analysis.")
+    print(f"Critical Error: Source file '{file_name}' missing from directory.")}' missing from directory.")
